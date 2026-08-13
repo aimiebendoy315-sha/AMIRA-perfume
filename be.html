@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AMIRA | Find Your Signature Scent</title>
+
+    <link rel="stylesheet" href="be.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="nav-inner">
+
+        <a href="#home" class="brand">
+            <span class="brand-mark">S</span>
+            <span class="brand-name">
+                SCENT <i>&</i> STORY
+                <small>FIND YOUR SIGNATURE</small>
+            </span>
+        </a>
+
+        <nav id="mainNav">
+            <a href="#home">Home</a>
+            <a href="#collection">Collection</a>
+            <a href="#quiz">Find Your Scent</a>
+            <a href="#story">Our Story</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="round-btn" id="themeBtn" title="Toggle theme">
+                <i data-lucide="moon"></i>
+            </button>
+
+            <button class="bag-btn" id="cartBtn">
+                <i data-lucide="shopping-bag"></i>
+                <span>Bag</span>
+                <b id="cartCount">0</b>
+            </button>
+
+            <button class="mobile-btn" id="mobileBtn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+    </div>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-noise"></div>
+
+    <div class="hero-content">
+
+        <div class="hero-copy">
+
+            <div class="mini-label">
+                <span></span>
+                FRAGRANCE FOR EVERY STORY
+            </div>
+
+            <h1>
+                A fragrance<br>
+                that tells<br>
+                <em>your story.</em>
+            </h1>
+
+            <p>
+                Discover fragrances designed around moods,
+                memories, and the little moments that make
+                you who you are.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#quiz" class="dark-btn">
+                    Find My Scent
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
+                <a href="#collection" class="text-btn">
+                    Explore Collection
+                    <i data-lucide="arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>10</strong>
+                    <span>Signature scents</span>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <span>Scent families</span>
+                </div>
+
+                <div>
+                    <strong>01</strong>
+                    <span>Made for you</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-product">
+
+            <div class="hero-circle"></div>
+
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+
+            <div class="hero-card hero-card-left">
+                <span>TOP NOTE</span>
+                <strong>Bergamot</strong>
+            </div>
+
+            <div class="hero-card hero-card-right">
+                <span>MOOD</span>
+                <strong>Serene</strong>
+            </div>
+
+            <div class="hero-realistic-bottle large-bottle">
+
+                <div class="hero-image-glow"></div>
+
+                <img
+                    src="https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=900&q=90"
+                    alt="AMIRA Eau de Parfum realistic perfume bottle"
+                >
+
+                <div class="hero-bottle-caption">
+                    <small>SCENT & STORY</small>
+                    <strong>AMIRA</strong>
+                    <span>eau de parfum · 01</span>
+                </div>
+
+            </div>
+
+            <div class="flower flower-one">✽</div>
+            <div class="flower flower-two">✦</div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="intro-section">
+
+    <div class="intro-label">
+        <span>01</span>
+        THE COLLECTION
+    </div>
+
+    <div>
+        <h2>
+            Fragrance is<br>
+            <em>personal.</em>
+        </h2>
+
+        <p>
+            We believe perfume should do more than smell good.
+            It should remind you of someone, somewhere, or
+            simply a version of yourself you love.
+        </p>
+    </div>
+
+</section>
+
+<section class="collection" id="collection">
+
+    <div class="collection-header">
+
+        <div>
+            <span class="section-label">
+                OUR SIGNATURES
+            </span>
+
+            <h2>
+                Find your<br>
+                <em>kind of beautiful.</em>
+            </h2>
+        </div>
+
+        <div class="collection-tools">
+
+            <div class="search">
+                <i data-lucide="search"></i>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search fragrance..."
+                >
+            </div>
+
+            <div class="filters">
+
+                <button class="filter active" data-filter="all">
+                    All
+                </button>
+
+                <button class="filter" data-filter="floral">
+                    Floral
+                </button>
+
+                <button class="filter" data-filter="fresh">
+                    Fresh
+                </button>
+
+                <button class="filter" data-filter="warm">
+                    Warm
+                </button>
+
+                <button class="filter" data-filter="woody">
+                    Woody
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<section class="quiz-section" id="quiz">
+
+    <div class="quiz-decoration">
+        <span>✦</span>
+        <span>02</span>
+    </div>
+
+    <div class="quiz-content">
+
+        <span class="section-label light">
+            THE SCENT QUIZ
+        </span>
+
+        <h2>
+            Not sure what<br>
+            <em>smells like you?</em>
+        </h2>
+
+        <p>
+            Answer three simple questions and we'll
+            find the fragrance that matches your mood.
+        </p>
+
+        <button class="cream-btn" id="startQuiz">
+            Take the Quiz
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+    </div>
+
+    <div class="quiz-preview">
+
+        <div class="preview-circle">
+            <span>YOUR</span>
+            <strong>SCENT</strong>
+            <small>AWAITS</small>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="story" id="story">
+
+    <div class="story-visual">
+
+        <div class="story-frame">
+
+            <div class="story-realistic-bottle">
+                <img
+                    src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=90"
+                    alt="AMIRA perfume bottle"
+                >
+            </div>
+
+            <div class="story-word">
+                MEMORY
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="story-copy">
+
+        <span class="section-label">
+            OUR STORY
+        </span>
+
+        <h2>
+            Every bottle<br>
+            holds a <em>memory.</em>
+        </h2>
+
+        <p>
+            Scent & Story began with a simple question:
+            why do certain smells instantly take us somewhere?
+        </p>
+
+        <p>
+            Our collection is designed around emotions —
+            quiet mornings, warm sunsets, rainy evenings,
+            first dates, familiar places, and new beginnings.
+        </p>
+
+        <button class="outline-btn" id="storyBtn">
+            Read Our Story
+            <i data-lucide="arrow-up-right"></i>
+        </button>
+
+    </div>
+
+</section>
+
+<section class="newsletter">
+
+    <div>
+        <span class="section-label">
+            STAY CLOSE
+        </span>
+
+        <h2>
+            A little fragrance<br>
+            in your <em>inbox.</em>
+        </h2>
+    </div>
+
+    <form id="newsletterForm">
+
+        <input
+            type="email"
+            id="newsletterEmail"
+            placeholder="Your email address"
+            required
+        >
+
+        <button type="submit">
+            Subscribe
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+    </form>
+
+</section>
+
+<footer>
+
+    <div class="footer-top">
+
+        <div class="footer-brand">
+
+            <div class="brand">
+
+                <span class="brand-mark">S</span>
+
+                <span class="brand-name">
+                    SCENT <i>&</i> STORY
+                    <small>FIND YOUR SIGNATURE</small>
+                </span>
+
+            </div>
+
+            <p>
+                Fragrances made for memories,
+                moods, and moments.
+            </p>
+
+        </div>
+
+        <div class="footer-links">
+
+            <div>
+                <span>EXPLORE</span>
+                <a href="#home">Home</a>
+                <a href="#collection">Collection</a>
+                <a href="#quiz">Find Your Scent</a>
+                <a href="#story">Our Story</a>
+            </div>
+
+            <div>
+                <span>CONNECT</span>
+
+                <a href="#" id="instagramBtn">
+                    Instagram
+                </a>
+
+                <a href="#" id="facebookBtn">
+                    Facebook
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 Scent & Story</span>
+        <span>Made with intention.</span>
+    </div>
+
+</footer>
+
+<div class="modal-overlay" id="cartModal">
+
+    <div class="cart-modal">
+
+        <button class="close-modal" id="closeCart">
+            <i data-lucide="x"></i>
+        </button>
+
+        <span class="section-label">
+            YOUR BAG
+        </span>
+
+        <h2>
+            Your selected<br>
+            <em>scents.</em>
+        </h2>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+            <span>Total</span>
+            <strong id="cartTotal">₱0</strong>
+        </div>
+
+        <button class="dark-btn full-btn" id="checkoutBtn">
+            Proceed to Checkout
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="productModal">
+
+    <div class="product-modal">
+
+        <button class="close-modal" id="closeProduct">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="modal-product-image">
+            <img id="modalProductImage" src="" alt="">
+        </div>
+
+        <div class="modal-product-info">
+
+            <span class="section-label" id="modalProductFamily">
+                FRAGRANCE
+            </span>
+
+            <h2 id="modalProductName">
+                AMIRA
+            </h2>
+
+            <p id="modalProductDescription"></p>
+
+            <div class="notes">
+
+                <div>
+                    <span>TOP</span>
+                    <strong id="modalTop"></strong>
+                </div>
+
+                <div>
+                    <span>HEART</span>
+                    <strong id="modalHeart"></strong>
+                </div>
+
+                <div>
+                    <span>BASE</span>
+                    <strong id="modalBase"></strong>
+                </div>
+
+            </div>
+
+            <div class="modal-price-row">
+
+                <strong id="modalProductPrice">
+                    ₱0
+                </strong>
+
+                <button class="dark-btn" id="modalAdd">
+                    Add to Bag
+                    <i data-lucide="shopping-bag"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="quizModal">
+
+    <div class="quiz-modal">
+
+        <button class="close-modal" id="closeQuiz">
+            <i data-lucide="x"></i>
+        </button>
+
+        <div class="quiz-top">
+
+            <span>
+                SCENT QUIZ
+            </span>
+
+            <strong id="quizStep">
+                1 / 3
+            </strong>
+
+        </div>
+
+        <div class="quiz-progress">
+            <span id="quizProgress"></span>
+        </div>
+
+        <div id="quizContent"></div>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="checkoutModal">
+
+    <div class="checkout-modal">
+
+        <button class="close-modal" id="closeCheckout">
+            <i data-lucide="x"></i>
+        </button>
+
+        <span class="section-label">
+            CHECKOUT
+        </span>
+
+        <h2>
+            Complete your<br>
+            <em>order.</em>
+        </h2>
+
+        <form id="checkoutForm">
+
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    id="customerName"
+                    required
+                    placeholder="Your full name"
+                >
+            </label>
+
+            <label>
+                Email
+                <input
+                    type="email"
+                    id="customerEmail"
+                    required
+                    placeholder="you@email.com"
+                >
+            </label>
+
+            <label>
+                Delivery Address
+                <textarea
+                    id="customerAddress"
+                    required
+                    placeholder="Your complete address"
+                ></textarea>
+            </label>
+
+            <div class="checkout-summary">
+                <span>Order Total</span>
+                <strong id="checkoutTotal">
+                    ₱0
+                </strong>
+            </div>
+
+            <button
+                type="submit"
+                class="dark-btn full-btn"
+            >
+                Place Order
+                <i data-lucide="check"></i>
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="successModal">
+
+    <div class="success-modal">
+
+        <div class="success-icon">
+            <i data-lucide="check"></i>
+        </div>
+
+        <span class="section-label">
+            ORDER CONFIRMED
+        </span>
+
+        <h2>
+            Thank you,<br>
+            <em id="successName">beautiful.</em>
+        </h2>
+
+        <p>
+            Your fragrance is on its way.
+            Your order number is
+            <strong id="orderNumber"></strong>.
+        </p>
+
+        <button class="dark-btn" id="doneBtn">
+            Continue Shopping
+            <i data-lucide="arrow-right"></i>
+        </button>
+
+    </div>
+
+</div>
+
+<div class="modal-overlay" id="storyModal">
+
+    <div class="story-modal">
+
+        <button class="close-modal" id="closeStory">
+            <i data-lucide="x"></i>
+        </button>
+
+        <span class="section-label">
+            THE STORY
+        </span>
+
+        <h2>
+            More than<br>
+            just <em>perfume.</em>
+        </h2>
+
+        <p>
+            Scent & Story was imagined as a fragrance
+            brand where every bottle represents a feeling,
+            a memory, or a moment worth keeping.
+        </p>
+
+        <p>
+            Instead of choosing a perfume only because
+            it smells good, we help people discover a scent
+            that reflects who they are.
+        </p>
+
+        <div class="signature">
+            Scent & Story
+        </div>
+
+    </div>
+
+</div>
+
+<div class="toast" id="toast">
+    <i data-lucide="check-circle"></i>
+
+    <span id="toastMessage">
+        Added to bag.
+    </span>
+</div>
+
+<script src="be.js"></script>
+
+</body>
+</html>
